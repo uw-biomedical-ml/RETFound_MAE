@@ -1,8 +1,8 @@
-# RETFound_MAE --Official Keras Implementation
+# RETFound_MAE -- Official Keras Implementation
 
 ## Release notes
 
-This repository is a faithful reimplementation of [RETFound_MAE](https://github.com/rmaphoh/RETFound_MAE) in Keras, focusing on  compatibility.
+Keras implementation of [RETFound_MAE](https://github.com/rmaphoh/RETFound_MAE) by Yukun Zhou.
 
 Please contact 	**yk73@uw.edu** if you have questions.
 
