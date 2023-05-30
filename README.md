@@ -8,6 +8,7 @@ Please contact 	**yk73@uw.edu** if you have questions.
 
 ## Installation
 - RETFound pre-trained weights
+The weights here are ported over from the weights provided in the official Pytorch repository.
 <table>
   <tr>
     <th colspan="2">Download</th>
