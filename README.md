@@ -28,7 +28,7 @@ Install others
 ```
 git clone https://github.com/uw-biomedical-ml/RETFound_MAE
 cd RETFound_MAE
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 
