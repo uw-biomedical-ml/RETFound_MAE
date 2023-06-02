@@ -64,7 +64,8 @@ python main_finetune.py
     --nb_classes 5 \ 
     --data_path ./IDRiD_data/ \
     --task ./internal_IDRiD/ \    
-    --resume ./finetune_IDRiD/   
+    --eval \
+    --resume ./finetune_IDRiD/
 ```
 
 
