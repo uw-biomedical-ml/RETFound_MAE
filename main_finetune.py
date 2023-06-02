@@ -109,10 +109,7 @@ def prepare_data(dir, is_train=True):
             lambda x, y: (normalization_layer(x), y),
             num_parallel_calls=AUTO,
         )
-        #.map(
-        #    lambda x, y: (tf.image.resize(x, (IMAGE_SIZE, IMAGE_SIZE)), y),
-        #    num_parallel_calls=AUTO,
-        #)
+
     return proc_ds.prefetch(AUTO)
 
 
