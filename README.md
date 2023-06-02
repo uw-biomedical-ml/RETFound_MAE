@@ -67,7 +67,7 @@ python main_finetune.py
 ```
 
 
-### Load the model and weights
+### Load the model
 ```
 import tfimm
 from models_vit import *
