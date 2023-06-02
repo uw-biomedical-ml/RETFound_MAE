@@ -1,8 +1,8 @@
-# RETFound_MAE -- Official Keras Implementation
+# RETFound_MAE (Official Keras Implementation)
 
 ## Release notes
 
-Keras implementation of [RETFound_MAE](https://github.com/rmaphoh/RETFound_MAE) by Yukun Zhou.
+Keras implementation of [RETFound_MAE by Yukun Zhou](https://github.com/rmaphoh/RETFound_MAE).
 
 Please contact 	**yk73@uw.edu** if you have questions.
 
@@ -11,8 +11,8 @@ Please contact 	**yk73@uw.edu** if you have questions.
 Create enviroment with conda:
 
 ```
-conda create -n retfound_keras python=3.9
-conda activate retfound_keras
+conda create -n retfound_mae python=3.9 -y
+conda activate retfound_mae
 ```
 
 Install Tensorflow 2.8.3 (cuda 11.1)
@@ -20,7 +20,7 @@ Install Tensorflow 2.8.3 (cuda 11.1)
 conda install -c conda-forge cudatoolkit=11.2.2 cudnn=8.1.0
 python -m pip install tensorflow==2.8.3
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/
-# The following example lists the number of visible GPUs on the host.
+# To list the number of visible GPUs on the host.
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
@@ -28,7 +28,7 @@ Install others
 ```
 git clone https://github.com/uw-biomedical-ml/RETFound_MAE
 cd RETFound_MAE
-python setup.py
+pip install -r requirement.txt
 ```
 
 
@@ -53,39 +53,37 @@ python main_finetune.py
     --data_path ./IDRiD_data/ \
     --nb_classes 5 \ 
     --finetune ./RETFound_cfp_weights.h5 \ 
-    --data_path ./IDRiD_data/ \
     --task ./finetune_IDRiD/ \
 ```
 
 - For evaluation
 ```
 python main_finetune.py
-    --data_path ./IDRiD_data/ c
-    --nb_classes 5 \ 
     --data_path ./IDRiD_data/ \
+    --nb_classes 5 \ 
     --task ./internal_IDRiD/ \    
     --eval \
     --resume ./finetune_IDRiD/
 ```
 
 
-### Load the model and weights (if you want to call the model in your code)
+### Load the model and weights
 ```
 import tfimm
-from models_vit_tfimm import *
+from models_vit import *
 # call the model
-keras_model = tfimm.create_model( # apply global pooling withoug class token
+keras_model = tfimm.create_model( # apply global pooling without class token
     "vit_large_patch16_224_mae",
     nb_classes = opt.nb_classes
     )
 ```
 
-If you want to train the classifier with a class token (default is usign global average pooling without this class token), 
+If you want to train the classifier with a class token (default is using global average pooling without this class token), 
 ```
 import tfimm
-from models_vit_tfimm import *
+from models_vit import *
 # call the model
-keras_model = tfimm.create_model( # apply global pooling withoug class token
+keras_model = tfimm.create_model(
     "vit_large_patch16_224",
     nb_classes = opt.nb_classes
     )
